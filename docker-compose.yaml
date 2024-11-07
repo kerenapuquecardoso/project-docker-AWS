@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  app:
+    image: apuque/project-using-tools-aws
+    restart: always
+    working_dir: /product
+    ports:
+      - 8080:8080
+    command: mvn spring-boot:run
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
